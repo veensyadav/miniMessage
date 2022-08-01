@@ -50,28 +50,30 @@
 
     <script>
   fetch(
-         `http://127.0.0.1:3000/text`
-
-            ).then(res=>{return res.json()}).then(data=>display(data));
-   function display(data) {
+         `http://localhost:3000/text`
+         )
+    .then(res=>{return res.json()})
+    .then(data=>display(data));
+   function display(data) 
+      {
        document.getElementById("list").innerHTML="";
   
-for(let i=0;i<data.length;i++)
-{
-const row = document.createElement('tr');
-row.innerHTML = `<th class="text-success" style="width: 10%" scope="row"> ${data[i].name} </td> 
-                  <td>
-                    <p> 
-                      ${data[i].message} 
-                    <p>
-                    <small class="text-muted">
-                      Submitted on: ${data[i].date}
-                    </small>
-                  </td>`;
+       for(let i=0;i<data.length;i++)
+            {
+                const row = document.createElement('tr');
+                row.innerHTML = `<th class="text-success" style="width: 10%" scope="row"> ${data[i].name} </th> 
+                                    <td>
+                                        <p> 
+                                            ${data[i].message} 
+                                        <p>
+                                        <small class="text-muted">
+                                            Submitted on: ${data[i].date}
+                                        </small>
+                                    </td>`;
     
-    document.getElementById("list").appendChild(row);
-}  
-}     
+                  document.getElementById("list").appendChild(row);
+            }  
+      }     
 
     </script>
   </body>
