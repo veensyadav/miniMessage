@@ -33,7 +33,8 @@ app.post("/success",(req,res)=>{
     var message=req.body.message;
     var data = {
         "name": name,
-        "message":message
+        "message":message,
+        "date": new Date()
     }
 
     db.collection('message').insertOne(data,(err)=>{

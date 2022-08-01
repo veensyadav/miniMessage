@@ -1,0 +1,15 @@
+h1, .h1{
+    line-height: 3.2;
+    margin-left: 40px;
+    margin-bottom: -1.5rem;
+}
+
+p {
+    margin-top: 0;
+    margin-bottom: 1rem;
+    margin-left: 40px;
+}
+
+.btn{
+    margin-left: 40px;
+}

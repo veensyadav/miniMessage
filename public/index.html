@@ -17,19 +17,25 @@
 
     <a href="./form.html" class="btn btn-danger">Add a new message!</a><br /><br />
 
-    <!-- <div class="display"></div>
+    <div class="display"></div>
     <table class="table table-hover">
-      <tr class="table-dark">
+      <!-- <tr class="table-dark">
         <th class="text-success" style="width: 10%" scope="row">Praveen</th>
         <td>
-          <p >Hello, How are You!!</p>
+          <p>Hello, How are You!!</p>
           <small class="text-muted">Submitted on: </small>
-        </td>
-      </tr>      
+        </td> -->
+        <tbody id="list">
+             
+        </tbody>
+      <!-- </tr>    -->
+      <!-- <tbody id="list">
+             
+      </tbody>   -->
     </table>
-  </div> -->
+  </div>
 
-    <div class="display">
+    <!-- <div class="display">
       <table>
           <thead>
               <th>Name</th>
@@ -40,7 +46,7 @@
           </tbody>
 
       </table>
-  </div>
+  </div> -->
 
     <script>
   fetch(
@@ -53,7 +59,15 @@
 for(let i=0;i<data.length;i++)
 {
 const row = document.createElement('tr');
-row.innerHTML = `<td> ${data[i].name} </td> <td> ${data[i].message} </td>`;
+row.innerHTML = `<th class="text-success" style="width: 10%" scope="row"> ${data[i].name} </td> 
+                  <td>
+                    <p> 
+                      ${data[i].message} 
+                    <p>
+                    <small class="text-muted">
+                      Submitted on: ${data[i].date}
+                    </small>
+                  </td>`;
     
     document.getElementById("list").appendChild(row);
 }  
